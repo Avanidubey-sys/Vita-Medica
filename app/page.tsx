@@ -95,7 +95,7 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-gradient-to-b from-indigo-100 to-white">
+      <section className="py-20 bg-gradient-to-black from-indigo-100 to-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-indigo-700 mb-6">
             About VitaMedica

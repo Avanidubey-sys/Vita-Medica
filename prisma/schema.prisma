@@ -9,19 +9,19 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(cuid())
+  id        String     @id @default(cuid())
   name      String
-  email     String   @unique
+  email     String     @unique
   password  String
   role      Role
   status    UserStatus @default(PENDING)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
 
-  // Relations (one-to-one, defined only here)
-  doctor   Doctor?
-  patient  Patient?
-  staff    Staff?
+  // Relations
+  doctor    Doctor?
+  patient   Patient?
+  staff     Staff?
 }
 
 model Doctor {
@@ -29,6 +29,7 @@ model Doctor {
   specialization String
   experience     Int
   phone          String
+  city           String?   // Optional so migrations succeed
 
   userId String  @unique
   user   User    @relation(fields: [userId], references: [id])
@@ -42,8 +43,8 @@ model Patient {
   gender        String
   medicalRecord String?
 
-  doctorId String?  
-  doctor   Doctor?  @relation(fields: [doctorId], references: [id])
+  doctorId String?
+  doctor   Doctor? @relation(fields: [doctorId], references: [id])
 
   userId String  @unique
   user   User    @relation(fields: [userId], references: [id])
