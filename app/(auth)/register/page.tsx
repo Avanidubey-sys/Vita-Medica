@@ -15,7 +15,7 @@ export default function RegisterPage() {
   });
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-
+  // Handles user registration form submission
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
