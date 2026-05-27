@@ -17,6 +17,7 @@ export async function POST(req: Request) {
     if (!valid)
       return NextResponse.json({ error: "Invalid password" }, { status: 400 });
     
+    
     if (user.status !== "APPROVED") {
   return NextResponse.json(
     { error: "Your account is not approved yet by admin." },
