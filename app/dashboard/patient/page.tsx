@@ -15,7 +15,7 @@ export default function PatientDashboard() {
       navigator.geolocation.getCurrentPosition(
         async (pos) => {
           setLocationAllowed(true);
-
+        //fix it
           const lat = pos.coords.latitude;
           const lon = pos.coords.longitude;
 
